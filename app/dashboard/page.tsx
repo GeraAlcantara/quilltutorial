@@ -5,7 +5,7 @@ import { db } from '@/db'
 import Dashboard from '@/components/Dashboard'
 const DashboarPage = async () => {
   const { getUser } = getKindeServerSession()
-  const user = getUser()
+  const user = await getUser()
 
   if (!user || !user.id) redirect('/auth-callback?origin=dashboard')
 
